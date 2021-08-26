@@ -1,0 +1,14 @@
+@import '../vars/mixins';
+@import '../vars/vars';
+
+body {
+  .navbar_chat {
+    background-color: $header-color;
+    color: $white-color;
+    .AzamovBrand {
+      width: 34px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  }
+}

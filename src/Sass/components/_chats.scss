@@ -1,0 +1,234 @@
+@import '../vars/mixins';
+@import '../vars/vars';
+
+.chats__myInfo {
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: middle;
+  }
+}
+.chatsBox {
+  border-radius: 4px;
+  .users {
+    background-color: $bg-components;
+    height: 76vh;
+    @include scrollbars(0.4em, $btn-color);
+    overflow-y: auto;
+    margin: 0 -8px;
+    .MuiInputBase-root {
+      color: rgba($white-color, 0.8);
+    }
+    .MuiFormLabel-root {
+      color: rgba($white-color, 0.6);
+      left: 30px;
+    }
+    .MuiFormLabel-root.Mui-focused {
+      color: $btn-color;
+    }
+
+    .MuiFilledInput-underline:after {
+      border-bottom: 2px solid $btn-color;
+    }
+    input {
+      max-width: 100%;
+      padding-left: 40px;
+    }
+    .MuiInput-underline:before {
+      border-color: rgba($white-color, 0.6);
+    }
+    &__search {
+      position: relative;
+      &__searchIcon {
+        position: absolute;
+        left: 8px;
+        top: 24px;
+      }
+    }
+    &__user {
+      color: $white-color;
+      .avatarUser {
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+      }
+      .MuiTypography-colorTextSecondary {
+        color: rgba($white-color, 0.6);
+      }
+      .MuiDivider-root {
+        background-color: #ffffff1f;
+      }
+    }
+  }
+
+  .chats__messages {
+    background-color: rgba($white-color, 0.9);
+    height: 76vh;
+    @media (max-width: 599px) {
+      height: 78vh;
+    }
+    @include scrollbars(0.4em, $btn-color);
+    overflow-y: auto;
+    color: $black-color;
+    .myAva {
+      width: 200px;
+      height: 200px;
+      opacity: 0.7;
+      @media (max-width: 400px) {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    .opacityName {
+      opacity: 0.7;
+    }
+    &__person {
+      background-color: rgba($white-color, 0.5);
+      max-width: 100%;
+      min-height: 8vh;
+    }
+    &__box {
+      background-color: transparent;
+      max-width: 100%;
+      height: 60vh;
+      @include scrollbars(0.4em, $btn-color);
+      overflow-y: auto;
+      padding: 20px 40px;
+
+      .smallerTime {
+        position: absolute;
+        bottom: -18px;
+      }
+      .catbox {
+        max-width: 100%;
+        min-height: 56vh;
+      }
+      .exp {
+        margin-bottom: 36px;
+        &__box {
+          background-color: $white-color;
+          padding: 8px 14px;
+          border-radius: 6px;
+          position: relative;
+          max-width: 60%;
+          word-wrap: break-word;
+
+          .exp__account {
+            color: $btn-color !important;
+          }
+          .corner {
+            position: absolute;
+            bottom: 0;
+            left: -8px;
+            background-color: $white-color;
+            width: 20px;
+            height: 15px;
+            clip-path: polygon(68% 0, 100% 0, 100% 100%, 0% 100%);
+          }
+        }
+      }
+
+      .imp {
+        margin-bottom: 36px;
+        &__box {
+          background-color: $btn-color;
+          padding: 8px 14px;
+          border-radius: 6px;
+          position: relative;
+          max-width: 60%;
+          color: rgba($white-color, 0.8);
+          word-wrap: break-word;
+
+          .smallerTime {
+            position: absolute;
+            bottom: -18px;
+          }
+          .exp__account {
+            color: $white-color !important;
+          }
+          .corner {
+            position: absolute;
+            bottom: 0;
+            right: -8px;
+            background-color: $btn-color;
+            width: 20px;
+            height: 15px;
+            clip-path: polygon(0 0, 32% 0, 100% 100%, 0% 100%);
+          }
+        }
+      }
+    }
+    &__input {
+      background-color: $white-color;
+      width: 100%;
+      height: 8vh;
+      .inp {
+        padding: 2px 4px;
+        display: flex;
+        align-items: center;
+        width: 400;
+        .iconBtn {
+          padding: 10px;
+        }
+        .inpBase {
+          flex: 1;
+        }
+        .line {
+          height: 28px;
+          margin: 4px;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+
+  .mobile_chats {
+    .close {
+      position: absolute;
+      top: 0;
+      right: 4px;
+      display: none;
+      color: $btn-color;
+    }
+    @media (max-width: 599px) {
+      transform: scale(0);
+      translate: all 0.3s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh !important;
+    }
+  }
+  .mobile_chats.show_mobile_chats {
+    @media (max-width: 599px) {
+      transform: scale(1);
+      .close {
+        display: block;
+      }
+    }
+  }
+  .infoFriend {
+    background-color: rgba($white-color, 0.95);
+    height: 76vh;
+    @media (max-width: 599px) {
+      height: 78vh;
+      width: 98%;
+    }
+    @include scrollbars(0.4em, $btn-color);
+    overflow-y: auto;
+    color: $black-color;
+    margin-right: -8px;
+    @include flexCenter;
+    .avatarUser {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
+.smallerTime {
+  font-size: 10px !important;
+  align-items: center !important;
+}
